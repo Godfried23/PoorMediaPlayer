@@ -6,20 +6,20 @@
     xmlns:local="clr-namespace:PoorMediaPlayer"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     Title="Poor People Mp3 Player"
-    Width="800"
-    Height="450"
+    Width="250"
+    Height="150"
     mc:Ignorable="d">
     <DockPanel>
         <Menu Background="Transparent" DockPanel.Dock="Top">
             <MenuItem Header="File">
-                <MenuItem Click="OnClickOpen" Header="_Open" />
+                <MenuItem Click="Open_OnClick" Header="_Open" />
                 <Separator />
-                <MenuItem Click="OnClickExit" Header="_Exit" />
+                <MenuItem Click="Exit_OnClick" Header="_Exit" />
             </MenuItem>
         </Menu>
         <StackPanel>
             <Label x:Name="songTitle" HorizontalAlignment="Center" />
-            <WrapPanel HorizontalAlignment="Center" Margin="10">
+            <WrapPanel Margin="10" HorizontalAlignment="Center">
                 <Button x:Name="playButton" Click="PlayButton_OnClick">Play</Button>
                 <Button x:Name="pauseButton" Click="PauseButton_OnClick">Pause</Button>
                 <Button x:Name="stopButton" Click="StopButton_OnClick">Stop</Button>

@@ -1,17 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Microsoft.Win32;
+using System;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
 using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace PoorMediaPlayer
 {
@@ -20,21 +10,21 @@ namespace PoorMediaPlayer
     /// </summary>
     public partial class MainWindow : Window
     {
-        private MediaPlayer mediaPlayer = new MediaPlayer();
+        private readonly MediaPlayer mediaPlayer = new MediaPlayer();
+        private readonly OpenFileDialog dlg = new OpenFileDialog();
 
         public MainWindow()
         {
             InitializeComponent();
         }
 
-        private void OnClickExit(object sender, RoutedEventArgs e)
+        private void Exit_OnClick(object sender, RoutedEventArgs e)
         {
             this.Close();
         }
 
-        private void OnClickOpen(object sender, RoutedEventArgs e)
+        private void Open_OnClick(object sender, RoutedEventArgs e)
         {
-            Microsoft.Win32.OpenFileDialog dlg = new Microsoft.Win32.OpenFileDialog();
             dlg.Filter = "MP3 files (*.mp3)|*.mp3|All files (*.*)|*.*";
             bool? result = dlg.ShowDialog();
 
@@ -45,6 +35,7 @@ namespace PoorMediaPlayer
             }
         }
 
+        #region MediaControls      
         private void PlayButton_OnClick(object sender, RoutedEventArgs e)
         {
             mediaPlayer.Play();
@@ -59,5 +50,6 @@ namespace PoorMediaPlayer
         {
             mediaPlayer.Stop();
         }
+        #endregion
     }
 }
