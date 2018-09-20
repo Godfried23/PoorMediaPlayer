@@ -1,0 +1,29 @@
+﻿<Window
+    x:Class="PoorMediaPlayer.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:PoorMediaPlayer"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="Poor People Mp3 Player"
+    Width="800"
+    Height="450"
+    mc:Ignorable="d">
+    <DockPanel>
+        <Menu Background="Transparent" DockPanel.Dock="Top">
+            <MenuItem Header="File">
+                <MenuItem Click="OnClickOpen" Header="_Open" />
+                <Separator />
+                <MenuItem Click="OnClickExit" Header="_Exit" />
+            </MenuItem>
+        </Menu>
+        <StackPanel>
+            <Label x:Name="songTitle" HorizontalAlignment="Center" />
+            <WrapPanel HorizontalAlignment="Center" Margin="10">
+                <Button x:Name="playButton" Click="PlayButton_OnClick">Play</Button>
+                <Button x:Name="pauseButton" Click="PauseButton_OnClick">Pause</Button>
+                <Button x:Name="stopButton" Click="StopButton_OnClick">Stop</Button>
+            </WrapPanel>
+        </StackPanel>
+    </DockPanel>
+</Window>
